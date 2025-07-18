@@ -97,16 +97,30 @@ This README outlines the core value proposition, platform architecture, user typ
 
 ---
 
-## 📌 Roadmap & Next Steps
+## 📌 Roadmap
 
-| Phase                       | Timeline  |
-| --------------------------- | --------- |
-| AI & Backend Architecture   | Weeks 1–2 |
-| Curator DAO Onboarding      | Weeks 3–4 |
-| Launch Submission Portal    | Week 5    |
-| DAO Review & Voting System  | Weeks 6–7 |
-| Ethics Panel + Appeals Flow | Week 8    |
-| Public Go-Live + PR Push    | Week 9–10 |
+Our development and community milestones are structured by quarter to provide clarity and transparency for contributors, partners, and supporters. Here’s what’s ahead for V3SS3L:
+
+| Quarter     | Milestones                         |
+| ----------- | ---------------------------------- |
+| **Q4 2025** | - MVP Platform: Upload, Vote, Mint |
+
+- Weekly Twitter/X Spaces
+- Substack + Podcast launch
+- First Vessels declared by DAO |
+  | **Q1 2026** | - First physical Capsule planned
+- Launch of zine or magazine
+- Exhibition or partner event
+- Public mint of Genesis collection |
+  | **Q2 2026** | - Multi-chain expansion
+- Global Capsule deployment
+- First fully community-curated Vessel archive |
+  | **Q3 2026** | - Launch Local V3SS3L Nodes in 5+ Global Regions
+- Launch Autonomous Minting via V3SS3L Mobile App |
+
+This roadmap is designed to guide our product, community, and archival growth. Each phase builds on the last, with a focus on decentralization, curation, and global impact.
+
+For more details on upcoming features and how to get involved in each phase, please refer to our [community channels](#community--support) and regular updates.
 
 ---
 
