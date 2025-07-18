@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V3SS3L — Unified Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --main: #000;
+      --accent: #888;
+      --bg-light: #f8f8f8;
+      --font: 'Roboto', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font);
+      background: #fff;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      max-width: 90px;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      font-weight: 500;
+      color: #111;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 4rem 2rem;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p, li {
+      margin-bottom: 1rem;
+    }
+
+    .center-text {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .hero {
+      background: url('http://roarforme.com/Hackathon/Vessel/F-99.JPG') center center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: relative;
+      text-align: center;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .hero-content a {
+      display: inline-block;
+      margin-top: 1rem;
+      background: white;
+      color: black;
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .what-v3ss3l, .get-involved, .split, .why-now {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .what-v3ss3l .photos, .split img, .why-now img {
+      flex: 1;
+    }
+
+    .what-v3ss3l .photos img, .split img, .why-now img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .what-v3ss3l .text, .split .text, .why-now .text {
+      flex: 1;
+    }
+
+    .get-involved div {
+      flex: 1;
+      min-width: 250px;
+      padding: 2rem;
+      color: #fff;
+      background-size: cover;
+      background-position: center;
+      border-radius: 8px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .vessel-types {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .vessel-types div {
+      background: var(--bg-light);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 2rem;
+      justify-items: center;
+      margin: 2rem 0;
+      font-size: 2rem;
+    }
+
+    .icon-grid img {
+      max-width: 50px;
+      height: auto;
+    }
+
+    .email-form input[type="email"] {
+      padding: 0.6rem;
+      width: 100%;
+      max-width: 300px;
+      margin-bottom: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .email-form button {
+      padding: 0.6rem 1rem;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .future, .vision {
+      color: white;
+      text-align: center;
+      padding: 6rem 2rem;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .future {
+      background-image: url('http://roarforme.com/Hackathon/Vessel/G-175.jpg');
+    }
+
+    .vision {
+      background-image: url('http://roarforme.com/Hackathon/Vessel/G-248-2.jpg');
+    }
+
+    .cta {
+      background: #000;
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .cta a {
+      background: white;
+      color: black;
+      padding: 0.8rem 1.5rem;
+      margin: 0.5rem;
+      border-radius: 6px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    footer {
+      background: var(--bg-light);
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    footer .footer-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .footer-nav, .socials {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav a:hover, .socials a:hover {
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .split, .why-now, .get-involved, .what-v3ss3l {
+        flex-direction: column;
+      }
+
+      .hero h1, .vision h1 {
+        font-size: 2rem;
+      }
+
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+   <header>
+    <a href="#" class="logo"><img src="http://roarforme.com/Hackathon/Vessel/LOGO.png" alt="V3SS3L" /></a>
+    <nav>
+      <a href="#explore">Explore</a>
+      <a href="#connect">Connect</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>V3SS3L</h1>
+      <p>Decentralized Photography Archives for a Borderless World</p>
+      <a href="#about">Join the Mission</a>
+    </div>
+  </section>
+
+  <!-- What is V3SS3L -->
+  <section class="what-v3ss3l">
+    <div class="photos">
+      <img src="http://roarforme.com/Hackathon/Vessel/G-170.jpg" alt="Photo" />
+    </div>
+    <div class="text">
+      <h2>What is V3SS3L?</h2>
+      <p>V3SS3L is a blockchain-based platform for preserving, curating, and minting photography that matters.</p>
+      <p>From conflict zones to moments of intimacy — our vessels archive stories that would otherwise fade.</p>
+    </div>
+  </section>
+
+  <!-- Get Involved -->
+  <section class="get-involved">
+    <div style="background-image: url('http://roarforme.com/Hackathon/Vessel/G92.jpg');">
+      <h3>Contribute Photography</h3>
+      <p>Share your work to be preserved on-chain.</p>
+    </div>
+    <div style="background-image: url('http://roarforme.com/Hackathon/Vessel/G109.jpg');">
+      <h3>Join the Curators DAO</h3>
+      <p>Help decide what gets archived.</p>
+    </div>
+    <div style="background-image: url('http://roarforme.com/Hackathon/Vessel/G104.jpg');">
+      <h3>Collect & Archive</h3>
+      <p>Own a part of history. Support the mission.</p>
+    </div>
+  </section>
+
+  <!-- Vessel Explanation -->
+  <section class="center-text" id="explore">
+    <h2>What Are Vessels?</h2>
+    <p>A Vessel is more than a photo. It’s a living archive of memory, geography, and transformation — minted on the blockchain.</p>
+    <p>Each Vessel represents a location in flux, where something is ending, changing, or emerging.</p>
+
+    <h2>What Can a Vessel Be?</h2>
+    <div class="vessel-types">
+      <div><span>🌍</span><strong>Conflict Zones</strong></div>
+      <div><span>🗽</span><strong>Political Centers</strong></div>
+      <div><span>🧕🏽</span><strong>Cultural Shifts</strong></div>
+      <div><span>🔥</span><strong>Ecological Frontlines</strong></div>
+      <div><span>🎭</span><strong>Disappearing Traditions</strong></div>
+      <div><span>🧪</span><strong>Experimental Zones</strong></div>
+    </div>
+    <p style="margin-top: 2rem;">Each Vessel can include: 📍 Geotag · 🖼 Photography · ✍️ Testimony · ⛓ Minting History</p>
+  </section>
+
+  <!-- How Do We Find -->
+  <section class="split">
+    <img src="http://roarforme.com/Hackathon/Vessel/G-191.jpg" alt="Map or Discovery" />
+    <div class="text">
+      <h2>How Do We Find Vessels?</h2>
+      <ul>
+        <li>Photographer submissions</li>
+        <li>Cultural & political research</li>
+        <li>Conflict and climate data</li>
+        <li>Community nominations</li>
+      </ul>
+      <p>DAO votes on which places become Vessels.</p>
+      <div class="buttons">
+        <a href="#connect">→ Join the DAO</a>
+        <a href="#explore">→ Nominate a Vessel</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="future">
+    <h2>The Future of Vessels</h2>
+    <p>Imagine a world where every story that matters is preserved with care.</p>
+    <p>A decentralized network of memory — built from below.</p>
+  </section>
+
+  <!-- CONNECT -->
+  <section class="center-text" id="connect">
+    <h2>Be part of the archive</h2>
+    <p>→ The V3SS3L newsletter lives on-chain. No spam. Just what matters.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDf0ZloDWMm8ZfyPgNeEXhAn_NVpIui0ACU13sA8gnrP6iPQ/viewform?usp=sharing&ouid=110545259418112095940" target="_blank" style="display: inline-block; margin-top: 1rem; padding: 0.8rem 1.5rem; background: #5865F2; color: white; border: none; border-radius: 4px; font-weight: bold; text-decoration: none;">Subscribe</a>
+    
+      
+
+    
+
+    <h2 style="margin-top: 4rem;">Follow the Conversation</h2>
+    <div class="icon-grid">
+      <div><img src="http://roarforme.com/icons/twitter.png" alt="Twitter" /></a>
+<br />Twitter</div>
+      <div><img src="http://roarforme.com/icons/farcaster.png" alt="Farcaster" /></a><br />Farcaster</div>
+    </div>
+
+    <h2><img style="max-width: 50px;" src="http://roarforme.com/icons/discord.png" alt="Discord icon" /></a><br />Join the Discord</h2>
+    <p>DAO discussions · Curator roles · Marketplace · Research logs</p>
+    <a href="https://discord.gg/wY3nWeJd" target="_blank" style="display: inline-block; margin-top: 1rem; padding: 0.8rem 1.5rem; background: #5865F2; color: white; border: none; border-radius: 4px; font-weight: bold; text-decoration: none;">Request Invite</a>
+
+    
+  </section>
+
+  <!-- ABOUT -->
+  <section class="vision" id="about">
+    <h1>What is V3SS3L Trying to Change?</h1>
+    <p>We believe photographs hold power — to preserve memory and resist erasure.</p>
+    <p>V3SS3L is a home for photography that defies time, borders, and censorship.</p>
+  </section>
+
+  <section class="why-now">
+    <img src="http://roarforme.com/Hackathon/Vessel/G-249R.jpg" alt="Emotional visual" />
+    <div class="text">
+      <h2>Why Now?</h2>
+      <p>History is being lost in broken hard drives and banned posts. Web3 makes it preservable — unstoppable and owned by creators.</p>
+    </div>
+  </section>
+
+  <section class="center-text">
+    <h2>Who is V3SS3L for?</h2>
+    <div class="icon-grid">
+      <div>📸<br />Photographers&nbsp;&nbsp;&nbsp;</div>
+      <div>🕊<br />&nbsp;&nbsp;Activists</div>
+      <div>📚<br />Historians</div>
+      <div>🧠<br />Curators</div>
+      <div>💎<br />Collectors</div>
+    </div>
+
+    <h2 style="margin-top: 4rem;">How Does It Work?</h2>
+    <ol style="max-width: 600px; margin: auto; text-align: left;">
+      <li>Submit or Nominate a Photo Capsule</li>
+      <li>Curated & Voted by DAO</li>
+      <li>Minted on Solana, Ethereum, or Bitcoin</li>
+      <li>Archived on V3SS3L</li>
+    </ol>
+    <a href="#" style="display:block; margin-top:1rem; font-weight:bold;">→ Learn more about our DAO</a>
+  </section>
+
+  <section class="cta">
+    <h2>Want to join the mission?</h2>
+    <a href="#">Contribute Work</a>
+    <a href="#">Join Community</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfDf0ZloDWMm8ZfyPgNeEXhAn_NVpIui0ACU13sA8gnrP6iPQ/viewform?usp=sharing&ouid=110545259418112095940">Subscribe</a>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <nav class="footer-nav">
+        <a href="#"><img src="http://roarforme.com/Hackathon/Vessel/LOGO.png" alt="V3SS3L" style="max-height: 40px;" /></a>
+        <a href="#explore">Explore</a>
+        <a href="#connect">Connect</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="socials">
+        <a href="#">X</a>
+        <a href="#">Discord</a>
+        <a href="#">Paragraph</a>
+      </div>
+    </div>
+    <p>© 2025 V3SS3L. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
